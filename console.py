@@ -62,7 +62,9 @@ def interactive_console(cmd_list, inputs=None):
     Parameters
     ----------
     cmd : list : str
-        Command list. no pipes, please.
+        Command list. no pipes, please. Command list means docker cmd style:
+            ['echo', 'ok']
+        If you pass it ['echo ok'] you'll have a bad time.
 
     inputs : list : str
         list of string responses to send. If empty, ignored
