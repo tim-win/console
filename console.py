@@ -30,7 +30,7 @@ def enqueue(pipe, queue):
 
 def read_queue(queue):
     """Return everything from the queue in a dandy string.
-    Logic is to handle
+    Logic is to handle the terminal case of queue being empty.
 
     Parameters
     ----------
@@ -55,15 +55,6 @@ def read_queue(queue):
     except Empty:
         return output
 
-
-def console(cmd, blocking=True, shell=True):
-	open_pipe = Popen(cmd, stdout=PIPE)
-	if blocking:
-		while open_pipe.poll() is None:
-			time.sleep(0.2)
-
-
-	return open_pipe.stdout.read()
 
 def interactive_console(cmd_list, inputs=None):
     """Interactive console.
